@@ -1,8 +1,18 @@
 <?xml version="1.0" encoding="UTF-8"?>
 <html>
 <head>
-    <title>HDT 8 - Camel Twitter WebSocket</title>
+    <title>HDT 8</title>
+    <link href="//netdna.bootstrapcdn.com/bootstrap/3.0.3/css/bootstrap.min.css" rel="stylesheet">
+    <link rel="stylesheet" type="text/css" href="https://cdnjs.com/libraries/Chart.js">
     <script type='text/javascript'>
+        function getRandomColor() {
+          var letters = '0123456789ABCDEF';
+          var color = '#';
+          for (var i = 0; i < 6; i++) {
+            color += letters[Math.floor(Math.random() * 16)];
+          }
+          return color;
+        }
 
         if (!window.WebSocket) {
         alert("WebSocket not supported by this browser");
@@ -22,10 +32,11 @@
         _onmessage: function(m) {
         if (m.data){
         var chat=$('chat');
-        var spanText = document.createElement('span');
+        var spanText = document.createElement('tweet');
         spanText.className='text';
         spanText.innerHTML=m.data;
-        //var lineBreak = document.createElement('br');
+        spanText.style.cssText = 'background: ' + getRandomColor() + ';';
+
         chat.appendChild(spanText);
         //chat.appendChild(lineBreak);
         chat.scrollTop = chat.scrollHeight - chat.clientHeight;
@@ -37,6 +48,21 @@
         }
 
         };
+        (function() {
+                var data = [{
+                    x: 10,
+                    y: 20
+                }, {
+                    x: 15,
+                    y: 10
+                }];
+                var ctx = document.getElementById("myChart");
+                var myLineChart = new Chart(ctx, {
+                    type: 'line',
+                    data: data
+                });
+
+        })();
 
     </script>
     <style type='text/css'>
@@ -52,34 +78,36 @@
             height: 100%;
             margin: 0 auto;
             box-sizing: border-box;
-        }   
-        div#chat>span.text:nth-child(even){
-            background-color: #FFFFFF;
         }
-        div#chat>span.text:nth-child(odd){
-            background-color: lightblue;
-        }
+
         .text{
             margin: 20px 0;
             display: block;
-            font-size: 20px;
-            font-family: monospace;
+            font-size: 15px;
+            font-family: "Courier New";
         }
-        h2#header{
-            background-color: #2399B6;
-            color: #F8FFF5;
-            margin: 0;
-            padding: 10px;
-            text-align: center;
-            font-size: 30px;
+
+        .fixed-panel {
+          min-height: 150;
+          max-height: 750;
+          overflow-y: scroll;
         }
     }
     </style>
 </head>
 <body>
-<div id='chat'>
-    <h2 id="header">Streaming Tweets...</h2>
+<div class="panel panel-primary">
+  <div class="panel-heading">HDT 8: Tweets filtrados "lol"</div>
+  <div class="panel-body fixed-panel">
+      <div id="chat">
+          
+      </div>
+  </div>
+  <div class="panel-body">
+      <canvas id="myChart" width="400" height="400"></canvas>
+  </div>
 </div>
+
 <script type='text/javascript'>
     room.join("Testing");
 </script>

@@ -3,6 +3,8 @@ package org.apache.camel.example.websocket;
 import org.apache.camel.builder.RouteBuilder;
 import org.apache.camel.component.twitter.search.TwitterSearchComponent;
 import org.apache.camel.component.websocket.WebsocketComponent;
+import java.io.FileWriter;
+import java.io.IOException;
 
 /**
  * A Camel route that updates from twitter all tweets using having the search term.
@@ -93,8 +95,17 @@ public class TwitterWebSocketRoute extends RouteBuilder {
         //Stream from twitter
         fromF("twitter-search://%s?delay=%s", searchTerm, delay)
             .to("log:tweet")
-            // and push tweets to web socket
             .to("websocket:camel-tweet?sendToAll=true")
 			.to("twitter:timeline/user");
+
+        // try {
+        //     FileWriter writer = new FileWriter("MyFile.txt", true);
+        //     writer.write("Hello World");
+        //     writer.write("\r\n");   // write new line
+        //     writer.write("Good Bye!");
+        //     writer.close();
+        // } catch (IOException e) {
+        //     e.printStackTrace();
+        // }
     }
 }

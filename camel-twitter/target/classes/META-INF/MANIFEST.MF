@@ -1,7 +1,7 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1509981037029
+Bnd-LastModified: 1510008857837
 Build-Jdk: 1.8.0_131
-Built-By: mario
+Built-By: amorales
 Bundle-Description: An example that pushes new tweets to a web page usin
  g web-socket
 Bundle-DocURL: https://www.apache.org/
