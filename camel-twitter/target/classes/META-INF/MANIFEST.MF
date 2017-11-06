@@ -1,0 +1,33 @@
+Manifest-Version: 1.0
+Bnd-LastModified: 1509981037029
+Build-Jdk: 1.8.0_131
+Built-By: mario
+Bundle-Description: An example that pushes new tweets to a web page usin
+ g web-socket
+Bundle-DocURL: https://www.apache.org/
+Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt
+Bundle-ManifestVersion: 2
+Bundle-Name: camel-example-twitter-websocket
+Bundle-SymbolicName: camel-example-twitter-websocket
+Bundle-Vendor: The Apache Software Foundation
+Bundle-Version: 2.20.0
+Created-By: Apache Maven Bundle Plugin
+Implementation-Title: Camel :: Example :: Twitter WebSocket
+Implementation-URL: http://camel.apache.org/camel-parent/examples/camel-
+ example-twitter-websocket
+Implementation-Vendor: The Apache Software Foundation
+Implementation-Vendor-Id: org.apache.camel.example
+Implementation-Version: 2.20.0
+Import-Package: org.apache.camel;version="[2.20,2.21)",org.apache.camel.
+ builder;version="[2.20,2.21)",org.apache.camel.component.twitter.search
+ ;version="[2.20,2.21)",org.apache.camel.component.websocket;version="[2
+ .20,2.21)",org.apache.camel.main;version="[2.20,2.21)",org.apache.camel
+ .model;version="[2.20,2.21)",org.osgi.framework;version="[1.5,2)",org.o
+ sgi.framework.wiring;version="[1.0,2)"
+Karaf-Info: Camel;camel-example-twitter-websocket=2.20.0
+Originally-Created-By: Apache Maven Bundle Plugin
+Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
+Specification-Title: Camel :: Example :: Twitter WebSocket
+Specification-Vendor: The Apache Software Foundation
+Specification-Version: 2.20.0
+Tool: Bnd-3.3.0.201609221906

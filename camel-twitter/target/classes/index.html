@@ -1,0 +1,87 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<html>
+<head>
+    <title>HDT 8 - Camel Twitter WebSocket</title>
+    <script type='text/javascript'>
+
+        if (!window.WebSocket) {
+        alert("WebSocket not supported by this browser");
+        }
+
+        function $() { return document.getElementById(arguments[0]); }
+
+        var room = {
+        join: function(name) {
+        this._username=name;
+        var location = "ws://localhost:9090/camel-tweet";
+        this._ws=new WebSocket(location);
+        this._ws.onmessage=this._onmessage;
+        this._ws.onclose=this._onclose;
+        },
+
+        _onmessage: function(m) {
+        if (m.data){
+        var chat=$('chat');
+        var spanText = document.createElement('span');
+        spanText.className='text';
+        spanText.innerHTML=m.data;
+        //var lineBreak = document.createElement('br');
+        chat.appendChild(spanText);
+        //chat.appendChild(lineBreak);
+        chat.scrollTop = chat.scrollHeight - chat.clientHeight;
+        }
+        },
+
+        _onclose: function(m) {
+        this._ws=null;
+        }
+
+        };
+
+    </script>
+    <style type='text/css'>
+        div { 
+            border: 0px solid black;
+        }
+        div#chat{
+            clear: both;
+            overflow: auto;
+            background-color: #FFFFFF;
+            border: 1px solid black;
+            width: 100%;
+            height: 100%;
+            margin: 0 auto;
+            box-sizing: border-box;
+        }   
+        div#chat>span.text:nth-child(even){
+            background-color: #FFFFFF;
+        }
+        div#chat>span.text:nth-child(odd){
+            background-color: lightblue;
+        }
+        .text{
+            margin: 20px 0;
+            display: block;
+            font-size: 20px;
+            font-family: monospace;
+        }
+        h2#header{
+            background-color: #2399B6;
+            color: #F8FFF5;
+            margin: 0;
+            padding: 10px;
+            text-align: center;
+            font-size: 30px;
+        }
+    }
+    </style>
+</head>
+<body>
+<div id='chat'>
+    <h2 id="header">Streaming Tweets...</h2>
+</div>
+<script type='text/javascript'>
+    room.join("Testing");
+</script>
+</body>
+</html>
