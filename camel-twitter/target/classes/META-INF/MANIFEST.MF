@@ -1,18 +1,17 @@
 Manifest-Version: 1.0
-Bnd-LastModified: 1510008857837
-Build-Jdk: 1.8.0_131
+Bnd-LastModified: 1510186450086
+Build-Jdk: 1.8.0_151
 Built-By: amorales
-Bundle-Description: An example that pushes new tweets to a web page usin
- g web-socket
+Bundle-Description: Streaming de tweets con websocket
 Bundle-DocURL: https://www.apache.org/
 Bundle-License: https://www.apache.org/licenses/LICENSE-2.0.txt
 Bundle-ManifestVersion: 2
 Bundle-Name: camel-example-twitter-websocket
-Bundle-SymbolicName: camel-example-twitter-websocket
+Bundle-SymbolicName: camel-spring-dm
 Bundle-Vendor: The Apache Software Foundation
 Bundle-Version: 2.20.0
 Created-By: Apache Maven Bundle Plugin
-Implementation-Title: Camel :: Example :: Twitter WebSocket
+Implementation-Title: Camel :: HDT :: Twitter y WebSocket
 Implementation-URL: http://camel.apache.org/camel-parent/examples/camel-
  example-twitter-websocket
 Implementation-Vendor: The Apache Software Foundation
@@ -27,7 +26,7 @@ Import-Package: org.apache.camel;version="[2.20,2.21)",org.apache.camel.
 Karaf-Info: Camel;camel-example-twitter-websocket=2.20.0
 Originally-Created-By: Apache Maven Bundle Plugin
 Require-Capability: osgi.ee;filter:="(&(osgi.ee=JavaSE)(version=1.8))"
-Specification-Title: Camel :: Example :: Twitter WebSocket
+Specification-Title: Camel :: HDT :: Twitter y WebSocket
 Specification-Vendor: The Apache Software Foundation
 Specification-Version: 2.20.0
-Tool: Bnd-3.3.0.201609221906
+Tool: Bnd-1.50.0

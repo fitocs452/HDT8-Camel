@@ -1,22 +1,21 @@
-# Twitter and Websocket Example
+# Twitter, Gmail y Websocket
 
 ### Introduction
-The example is demonstrating how to poll a constant feed of twitter searches
-and publish results in real time using web socket to a web page.
+Lo que hace es tomar tweets con un filtrado de términos en nuestro caso fue "lol",
+luego lo mandamos a un socket (que se puede acceder por http://localhost:9090) y
+luego mandamos la info por correo
 
-### Build
-You will need to compile this example first:
+### Ejecutarlo
+Para ejecutarlo se corre el comando:
 
-	mvn compile
+	mvn compile && mvn camel:run
 
-### Run
-To run the example type
+### Observación
+Para cambiar los datos del correo ir a archivo "mail.properties"
 
-	mvn camel:run
 
-Then open a browser to see live twitter updates in the web page
+### Acceso
+Una vez compilado y ejecutado, acceder a:
 
 	http://localhost:9090/index.html
-<http://localhost:9090/index.html>
 
-To stop the example hit <kbd>ctrl</kbd>+<kbd>c</kbd>

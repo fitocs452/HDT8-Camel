@@ -63,7 +63,8 @@ public class TwitterWebSocketRoute extends RouteBuilder {
         //Stream from twitter
         fromF("twitter-search://%s?delay=%s", searchTerm, delay)
             .to("log:tweet")
-            .to("websocket:camel-tweet?sendToAll=true");
+            .to("websocket:camel-tweet?sendToAll=true")
+            .to("smtps://smtp.gmail.com:465?username=gadolfomoralesmartinez&password=Fitocs123456&debugMode=true");
 
         // try {
         //     FileWriter writer = new FileWriter("MyFile.txt", true);
