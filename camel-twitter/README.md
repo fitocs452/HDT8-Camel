@@ -1,6 +1,6 @@
 # Twitter, Gmail y Websocket
 
-### Introduction
+### Descripción
 Lo que hace es tomar tweets con un filtrado de términos en nuestro caso fue "lol",
 luego lo mandamos a un socket (que se puede acceder por http://localhost:9090) y
 luego mandamos la info por correo
